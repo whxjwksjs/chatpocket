@@ -1,0 +1,7 @@
+{
+  "appId":"app.chatpocket.mobile",
+  "appName":"ChatPocket",
+  "webDir":"dist",
+  "bundledWebRuntime":false,
+  "server":{"androidScheme":"https"}
+}
