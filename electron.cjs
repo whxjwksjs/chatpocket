@@ -1,4 +1,4 @@
-const { app, BrowserWindow, shell } = require('electron');
+const { app, BrowserWindow, shell, ipcMain } = require('electron');
 const path = require('node:path');
 
 let mainWindow;
@@ -64,6 +64,8 @@ function createWindow() {
     return { action: 'deny' };
   });
 }
+
+ipcMain.on('chatpocket:open-chatgpt', () => createChatWindow());
 
 app.whenReady().then(() => {
   createWindow();
