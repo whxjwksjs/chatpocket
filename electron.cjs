@@ -1,6 +1,12 @@
 const { app, BrowserWindow, shell, ipcMain } = require('electron');
 const path = require('node:path');
 
+// The portable build stores its profile beside the executable (USB/folder friendly).
+// Installed builds keep Electron's normal per-user profile location.
+if (process.env.PORTABLE_EXECUTABLE_DIR) {
+  app.setPath('userData', path.join(process.env.PORTABLE_EXECUTABLE_DIR, 'ChatPocketData'));
+}
+
 let mainWindow;
 let chatWindow;
 
