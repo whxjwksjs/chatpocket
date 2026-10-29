@@ -4,8 +4,50 @@
   "private": true,
   "description": "A lightweight, local-first conversation archive for Windows and Android.",
   "main": "electron.cjs",
-  "scripts": {"start":"electron .","web":"vite --host 0.0.0.0","build":"vite build","android:sync":"npm run build && cap sync android","dist:win":"npm run build && electron-builder --win nsis"},
-  "dependencies": {"@capacitor/core":"^7.4.3"},
-  "devDependencies": {"@capacitor/android":"^7.4.3","@capacitor/cli":"^7.4.3","electron":"^37.2.6","electron-builder":"^26.0.12","vite":"^6.3.5"},
-  "build": {"appId":"app.chatpocket.desktop","productName":"ChatPocket","files":["dist/**/*","electron.cjs","package.json"],"directories":{"output":"release"},"win":{"target":[{"target":"nsis","arch":["x64"]}]},"nsis":{"oneClick":false,"allowToChangeInstallationDirectory":true,"createDesktopShortcut":true,"createStartMenuShortcut":true}}
+  "scripts": {
+    "start": "electron .",
+    "web": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "android:sync": "npm run build && cap sync android",
+    "dist:win": "npm run build && electron-builder --win nsis"
+  },
+  "dependencies": {
+    "@capacitor/core": "^7.4.3",
+    "@capacitor/browser": "^7.0.2"
+  },
+  "devDependencies": {
+    "@capacitor/android": "^7.4.3",
+    "@capacitor/cli": "^7.4.3",
+    "electron": "^37.2.6",
+    "electron-builder": "^26.0.12",
+    "vite": "^6.3.5"
+  },
+  "build": {
+    "appId": "app.chatpocket.desktop",
+    "productName": "ChatPocket",
+    "files": [
+      "dist/**/*",
+      "electron.cjs",
+      "package.json"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
 }
