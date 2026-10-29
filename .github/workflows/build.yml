@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['index.html','styles.css','app.js','electron.cjs','package.json','capacitor.config.json','vite.config.js','.github/workflows/build.yml']
+    paths: ['index.html','styles.css','app.js','electron.cjs','preload.cjs','package.json','capacitor.config.json','vite.config.js','.github/workflows/build.yml']
   release:
     types: [published]
 permissions:
