@@ -9,7 +9,7 @@
     "web": "vite --host 0.0.0.0",
     "build": "vite build",
     "android:sync": "npm run build && cap sync android",
-    "dist:win": "npm run build && electron-builder --win nsis"
+    "dist:win": "npm run build && electron-builder --win nsis portable"
   },
   "dependencies": {
     "@capacitor/core": "^7.4.3",
@@ -38,6 +38,12 @@
       "target": [
         {
           "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
           "arch": [
             "x64"
           ]
